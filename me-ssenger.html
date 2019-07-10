@@ -1,5 +1,9 @@
 <!DOCTYPE><html>
 <html>
+<head>
+	<title>My Flexbox Project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
 <style>
 	#flex-container {
 		display: flex;
@@ -65,19 +69,6 @@
 		content: "";
 	}
 
-	/*.bubble-left::after {
-		position: absolute;
-		top: calc(50% - 12px);
-		right: -30px;
-		width: 24px;
-		height: 24px;
-		content: "";
-		border-radius: 50%;
-		background: url(face.JPG);
-		background-size: 100%;
-		background-position-y: 30%;
-	}*/
-
 	.bubble-right::after {
 		position: absolute;
 		top: calc(50% - 5px);
@@ -86,19 +77,6 @@
 		border-color: transparent transparent transparent steelblue;
 		content: "";
 	}
-
-	/*.bubble-right::before {
-		position: absolute;
-		top: calc(50% - 12px);
-		left: -30px;
-		width: 24px;
-		height: 24px;
-		content: "";
-		border-radius: 50%;
-		background: url(face.JPG);
-		background-size: 100%;
-		background-position-y: 30%;
-	}*/
 
 	.msg-left, .msg-right {
 		padding: 7px 10px;
@@ -208,6 +186,13 @@
 
 	#email {
 		font-size: 30px;
+	}
+
+	@media (max-width: 500px) {
+
+		#flex-container {
+			width: 100%;
+		}
 	}
 </style>
 <body>
