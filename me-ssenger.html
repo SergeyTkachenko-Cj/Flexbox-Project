@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 <style>
+
 	#flex-container {
 		display: flex;
 		flex-direction: column;
@@ -18,7 +19,6 @@
 	}
 
 	#flex-child-1 {
-		height: 80px;
 		padding: 10px;
 		border-bottom: 1px solid black;
 		color: white;
@@ -141,13 +141,12 @@
 
 	#twit {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
-		width: 20%;
+		width: 100%;
 	}
 
 	#bird { 
-		width: 50%; 
 		height: 70%;
 	}
 
@@ -160,6 +159,7 @@
 
 	#flex-span-1 {
 		width: 80px;
+		height: 80px;
 		flex-shrink: 0;
 		border: 1.5px solid dimgrey;
 		text-align: center;
@@ -185,8 +185,18 @@
 		text-align: center;
 	}
 
+	#sm-screen-warn span {
+		display: none;
+		color: white;
+	}
+
 	#email {
 		font-size: 30px;
+	}
+
+	#emo {
+		width: 40px;
+		height: 40px;
 	}
 
 	@media (max-width: 500px) {
@@ -196,14 +206,90 @@
 		}
 	}
 
-	@media (max-width: 340px) {
+	@media (max-width: 430px) {
 
-		#flex-container {
+		#flex-child-2 {
+			flex-wrap: wrap;
+			height: auto;
+		}
+
+		#col-1 {
 			width: 100%;
+			height: 300px;
+			margin: 10px;
+		}
+
+		#col-2 {
+			width: 100%;
+			height: 55px;
+			margin: 0 10px 10px;
+			overflow: scroll;
+		}
+
+		.online-lot, .offline-lot {
+			height: auto;
+			margin-bottom: 2px;
 		}
 	}
+
+	@media (max-width: 340px) {
+
+		#flex-child-1 {
+			flex-wrap: wrap;
+		}
+
+		#flex-span-3 {
+			width: 50px;
+			margin-top: 8px;
+		}
+
+		#flex-span-2 #email {
+    		font-size: 10vw;
+		}
+
+		#flex-span-2 span {
+			font-size: 5vw;
+		}
+	}
+
+	@media (max-width: 244px) {
+
+		html, body {
+			margin: 0;
+		}
+
+		#flex-container {
+			position: relative;
+		}
+
+		#flex-container,
+		#flex-container * {
+			display: none;
+		}
+
+		#sm-screen-warn {
+			position: absolute;
+			z-index: 99999;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			background-color: dodgerblue;
+		}
+
+		#sm-screen-warn span {
+			display: inline;
+		}
+	}
+
 </style>
 <body>
+	<div id="sm-screen-warn">
+		<span>Screen is too narrow<br><img id="emo" src="crying-emoji.png"></span>
+	</div>
 	<div id="flex-container">
 		<div id="flex-child-1" class="flex-cell">
 			<div id="flex-span-1" class="flex-span"></div>
@@ -219,22 +305,22 @@
 			<span id="col-1" class="flex-span">
 				<span class="msg-left">
 					<div class="face-icon"></div>
-					<span class="bubble-left">Hi! Are you a flexbox God?</span>
+					<span class="bubble-left">Self-talk is a sign of insanity</span>
 				</span>
 				<span class="msg-right">
 					<div class="right-center">
 						<div class="face-icon"></div>
-						<span class="bubble-right">Yep, its me</span>
+						<span class="bubble-right">or higher intelligence</span>
 					</div>
 				</span>
 				<span class="msg-left">
 					<div class="face-icon"></div>
-					<span class="bubble-left">Can you flex my boxes?</span>
+					<span class="bubble-left">ahahahah, so right bro</span>
 				</span>
 				<span class="msg-right">
 					<div class="right-center">
 						<div class="face-icon"></div>
-						<span class="bubble-right">Sure thing bro</span>
+						<span class="bubble-right">Love talking 2 u</span>
 					</div>
 				</span>
 				<input type="text" name="txt" id="inpt" autofocus>
@@ -284,8 +370,8 @@
 		</div>
 		<div id="flex-child-3" class="flex-cell">
 			<span id="twit">
-				<img id="bird" src="twitter.png">
-				<span>QUITTER</span>
+				<img id="bird" src="me_png.png">
+				<span>- SSENGER</span>
 			</span>
 		</div>
 	</div>
