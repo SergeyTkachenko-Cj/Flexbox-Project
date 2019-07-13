@@ -6,12 +6,23 @@
 </head>
 <style>
 
+	:root {
+		--clr-1: #876BCE;
+		--clr-2: dodgerblue;
+		--clr-3: #fff;
+		--clr-4: #000;
+		--clr-5: dimgrey;
+	}
+
+	body {
+		background-color: var(--clr-4, #000);
+	}
+
 	#flex-container {
 		display: flex;
 		flex-direction: column;
 		width: 500px;
-		/*height: 500px;*/
-		border: 1.5px solid dimgrey;
+		border: 1.5px solid var(--clr-5, dimgrey);
 	} 
 
 	.flex-cell {
@@ -20,13 +31,14 @@
 
 	#flex-child-1 {
 		padding: 10px;
-		border-bottom: 1px solid black;
-		color: white;
-		background: dodgerblue;
+		border-bottom: 1px solid var(--clr-4, #000);
+		color: var(--clr-3, #fff);
+		background: var(--clr-2, dodgerblue);
 	}
 
 	#flex-child-2 {
 		height: 350px;
+		background-color: var(--clr-3, #fff);
 	}
 
 	#col-1 {
@@ -35,19 +47,21 @@
 		justify-content: space-between;
 		width: 65%;
 		margin: 10px 0 10px 10px;
-		border: 1px solid black;
+		border: 1px solid var(--clr-4, #000);
+		background: url(wallpaper-grey.jpg);
+		background-size: 100% 100%;
 	}
 
 	.bubble-left, .bubble-right {
 		position: relative;
 		padding: 3px;
 		border-radius: 10px;
-		color: white;
-		background:	dodgerblue;
+		color: var(--clr-3, #fff);
+		background:	var(--clr-2, dodgerblue);
 	}
 
 	.bubble-right {
-		background: steelblue;
+		background: var(--clr-1, #876BCE);
 	}
 
 	.face-icon {
@@ -65,7 +79,7 @@
 		top: calc(50% - 5px);
 		left: -9px;
 		border: 5px solid;
-		border-color: transparent dodgerblue transparent transparent;
+		border-color: transparent var(--clr-2, dodgerblue) transparent transparent;
 		content: "";
 	}
 
@@ -74,7 +88,7 @@
 		top: calc(50% - 5px);
 		right: -9px;
 		border: 5px solid;
-		border-color: transparent transparent transparent steelblue;
+		border-color: transparent transparent transparent var(--clr-1, #876BCE);
 		content: "";
 	}
 
@@ -96,7 +110,8 @@
 	#inpt {
 		height: 10%;
 		margin: 5px;
-		border: 1px solid black;
+		padding-left: 5px;
+		border: 1px solid var(--clr-4, #000);
 		border-radius: 5px;
 		outline: none;
 	}
@@ -106,7 +121,8 @@
 		flex-direction: column;
 		width: 35%;
 		margin: 10px;
-		border: 1px solid black;
+		border: 1px solid var(--clr-4, #000);
+		color: var(--clr-5, dimgrey);
 	}
 
 	.online-lot, .offline-lot {
@@ -115,7 +131,7 @@
 	}
 
 	.offline-lot {
-		opacity: 0.5;
+		opacity: 0.3;
 	}
 
 	.pic {
@@ -136,7 +152,8 @@
 		display: flex;
 		height: 60px;
 		padding-left: 10px;
-		border-top: 1px solid black;
+		border-top: 1px solid var(--clr-4, #000);
+		background-color: var(--clr-3, #fff);
 	}
 
 	#twit {
@@ -146,8 +163,15 @@
 		width: 100%;
 	}
 
+	#twit span {
+		color: #687DE8;
+    	font-family: monospace;
+    	font-size: 18px;
+	}
+
 	#bird { 
 		height: 70%;
+		filter: hue-rotate(40deg);
 	}
 
 	.flex-span {
@@ -161,7 +185,7 @@
 		width: 80px;
 		height: 80px;
 		flex-shrink: 0;
-		border: 1.5px solid dimgrey;
+		border: 1.5px solid var(--clr-5, dimgrey);
 		text-align: center;
 		background: url(face.JPG);
 		background-size: 100%;
@@ -187,7 +211,7 @@
 
 	#sm-screen-warn span {
 		display: none;
-		color: white;
+		color: var(--clr-3, #fff);
 	}
 
 	#email {
@@ -277,7 +301,7 @@
 			width: 100%;
 			height: 100%;
 			text-align: center;
-			background-color: dodgerblue;
+			background-color: var(--clr-2, dodgerblue);
 		}
 
 		#sm-screen-warn span {
@@ -371,7 +395,7 @@
 		<div id="flex-child-3" class="flex-cell">
 			<span id="twit">
 				<img id="bird" src="me_png.png">
-				<span>- SSENGER</span>
+				<span>-SSENGER</span>
 			</span>
 		</div>
 	</div>
